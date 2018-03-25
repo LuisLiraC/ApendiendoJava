@@ -3,7 +3,7 @@ public class Bucles_For3 {
 
 	public static void main(String[] args) {
 		
-		int resultado = 1;
+		long resultado = 1L;
 		
 		int numero = Integer.parseInt(JOptionPane.showInputDialog("Ingresa número"));
 		
