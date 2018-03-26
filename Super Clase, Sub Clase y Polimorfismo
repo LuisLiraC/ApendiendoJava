@@ -1,0 +1,125 @@
+package poo;
+
+import java.util.*;
+
+public class Uso_Empleado {
+
+	public static void main(String[] args) {
+		
+		Jefatura jefeRRHH = new Jefatura ("Teemo", 15000, 2000, 12, 10);
+		
+		jefeRRHH.establece_incentivo(3000);
+		
+		Empleado [] Empleados = new Empleado [6];
+		
+		Empleados[0]=new Empleado("Luis", 6500, 2016, 12, 3);
+		Empleados[1]=new Empleado("Lira", 7000, 2018, 8, 27);
+		Empleados[2]=new Empleado("Arturo", 8000, 2010, 1, 1);
+		Empleados[3]=new Empleado("Juan");
+
+		// Polimorfismo - Principio de sustitución
+		Empleados[4]=jefeRRHH;
+		Empleados[5]= new Jefatura("Tristana", 20000, 1999, 5, 19); 
+		
+		for (Empleado e: Empleados) {
+			e.aumentoSueldo(5);
+		}
+		
+		for (Empleado e: Empleados) {
+			System.out.println("ID " + e.dameId() + " - " + 
+					" Nombre " + e.dameNombre() + 
+					/* Polimorfismo - Java sabe cuándo ir a dameSueldo() de Empleado
+					 * y cuando ir a dameSueldo() de Jefatura 
+					 */
+					" | Sueldo $ " + e.dameSueldo() +
+					" | Fecha Alta " + e.dameFechaContrato());
+		}
+	}
+
+}
+
+
+
+class Empleado {
+	
+	public Empleado (String nom, double sue, int year, int month, int day) {
+		
+		nombre=nom;
+		sueldo=sue;
+		GregorianCalendar calendario = new GregorianCalendar(year, month-1, day);
+		altaContrato = calendario.getTime();
+		id = idSiguiente;
+		idSiguiente++;
+		
+	}
+	
+	public Empleado (String nom) {
+		this(nom, 30000, 2000, 01, 01);
+	}
+	
+	
+	
+	// Getter
+	public String dameNombre() {
+		return nombre;
+	}
+	
+	public double dameSueldo() {
+		return sueldo;
+	}
+	
+	public Date dameFechaContrato() {
+		return altaContrato;
+	}
+	
+	// Setter
+	public void aumentoSueldo(double porcentaje) {
+		
+		double aumento = sueldo*porcentaje/100;
+		
+		sueldo += aumento;
+	}
+	
+	
+	// Declaración de variable de clase
+	private String nombre;
+	private double sueldo;
+	private Date altaContrato;
+	private int id;
+	private static int idSiguiente = 1;
+	
+	// Getter
+	public int dameId() {
+		return id;
+	}
+}
+
+
+
+
+
+
+
+class Jefatura extends Empleado {
+	
+	public Jefatura (String nom, double sue, int year, int month, int day) {
+		
+		super(nom, sue, year, month, day);
+				
+	}
+	
+	// Setter
+	public void establece_incentivo(double b) {
+		incentivo=b;
+	}
+	
+	// Getter
+	
+	public double dameSueldo () {
+		double sueldoJefe = super.dameSueldo();
+		return sueldoJefe + incentivo; 
+	}
+	
+	private double incentivo;
+	
+}
