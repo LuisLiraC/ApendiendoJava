@@ -1,3 +1,4 @@
+
 public class CalculosConMath {
 
 	public static void main(String[] args) {
@@ -22,9 +23,10 @@ public class CalculosConMath {
 		System.out.println(pi);
 		// 15.7079...
 		
-		// RefundiciÃ³n (Convertir un tipo de dato a otro)
+		// Refundición (Convertir un tipo de dato a otro)
 		double num1=5.85;
 		int num2=(int)Math.round(num1);
 		System.out.println(num2);
 	}
+
 }

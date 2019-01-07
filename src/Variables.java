@@ -1,8 +1,9 @@
+
 public class Variables {
 	public static void main(String[] args) {
-		byte edad=80; // DeclaraciÃ³n e iniciaciÃ³n de variable en una Ãºnica lÃ­nea
+		byte edad=80; // Declaración e iniciación de variable en una única línea
 		
-		/* La siguiente instrucciÃ³n imprimir en la consola (System.out) el valor de
+		/* La siguiente instrucción imprimir en la consola (System.out) el valor de
 		 * la variable edad
 		 */
 		

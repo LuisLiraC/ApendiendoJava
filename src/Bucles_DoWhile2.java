@@ -6,7 +6,7 @@ public class Bucles_DoWhile2 {
 		String genero="";
 		
 		do {
-			genero=JOptionPane.showInputDialog("Introduce tu gÃ©nero H/M");
+			genero=JOptionPane.showInputDialog("Introduce tu género H/M");
 			
 			
 		} while (genero.equalsIgnoreCase("H") == false && genero.equalsIgnoreCase("M") == false);

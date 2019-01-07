@@ -24,10 +24,10 @@ public class Bucles_For2 {
 		}
 
 		if (arroba == 1 && punto == true) {
-			System.out.println("Correo v√°lido");
+			System.out.println("Correo v·lido");
 		}
 		else {
-			System.out.println("Correo no v√°lido");
+			System.out.println("Correo no v·lido");
 		}
 	}
 

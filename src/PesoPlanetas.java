@@ -14,7 +14,7 @@ public class PesoPlanetas {
 		double g_jupiter= 24.8;
 		
 		System.out.println("Tu peso en Marte es de: " + peso * g_marte / g_tierra + " kilogramos");
-		System.out.println("Tu peso en JÃºpiter es de " + peso * g_jupiter / g_tierra + " kilogramos");
+		System.out.println("Tu peso en Júpiter es de " + peso * g_jupiter / g_tierra + " kilogramos");
 		
 		peso_usuario.close();
 		

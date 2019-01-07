@@ -10,20 +10,17 @@ public class Bucles_While2 {
 		int intentos = 0;
 		
 		while (numero != random) {
-			
-			System.out.println("Introduce nÃºmero");
+
+			intentos++;
+			System.out.println("Introduce número");
 			numero = entrada.nextInt();
 			
 			if (numero < random) {
-				
-				System.out.println("El nÃºmero es mayor");
-				intentos ++;
-				
-			} else {
+				System.out.println("El número es mayor");		
+			} 
 			
-				System.out.println("El nÃºmero es menor");
-				intentos ++;
-			
+			else {
+				System.out.println("El número es menor");
 			}
 						
 		}
@@ -31,7 +28,7 @@ public class Bucles_While2 {
 		// Cerrar Scanner para liberar recursos
 		entrada.close();
 		System.out.println("Acertaste!");
-		System.out.println("Te tomÃ³ " + intentos + " intentos");
+		System.out.println("Te tomó " + intentos + " intentos");
 		
 	}
 }

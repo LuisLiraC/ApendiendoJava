@@ -1,3 +1,4 @@
+
 public class Operadores {
 	
 	public static void main(String[] args) {
@@ -9,7 +10,9 @@ public class Operadores {
 		
 		double resultado = cm * pulgadas;
 		
-		// El sÃ­mbolo + en este caso se usarÃ¡ para concatenar
+		// El símbolo + en este caso se usará para concatenar
 		System.out.println(cm + " pulgadas, equivalen a " + resultado + " cm");
 	}
 }
+
+

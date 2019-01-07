@@ -1,3 +1,4 @@
+
 public class ManipulaCadenas {
 
 	public static void main(String[] args) {
@@ -14,8 +15,8 @@ public class ManipulaCadenas {
 		// Las primeras dos letras son Lu
 		
 		int ultima_letra=nombre.length();
-		System.out.println("La Ãºltima letra es la " + nombre.charAt(ultima_letra - 1));
-		// La Ãºltima letra es la s
+		System.out.println("La última letra es la " + nombre.charAt(ultima_letra - 1));
+		// La última letra es la s
 		
 		String nombre2 = "luis";
 		System.out.println(nombre.equals(nombre2));
@@ -23,7 +24,7 @@ public class ManipulaCadenas {
 		System.out.println(nombre.equalsIgnoreCase(nombre2));
 		// Devuelve true
 		
-		String frase="Hoy es un estupendo dÃ­a para aprender a programar en Java";
+		String frase="Hoy es un estupendo día para aprender a programar en Java";
 		String frase_resumen=frase.substring(29, 57) + " y comer pizza";
 		System.out.println(frase_resumen);
 		// aprender a programar en Java y comer pizza	

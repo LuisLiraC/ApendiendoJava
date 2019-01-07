@@ -27,3 +27,5 @@ public class Condicionales_IF {
 		
 		entrada.close();
 	}
+
+}

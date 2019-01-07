@@ -1,3 +1,4 @@
+
 public class Matriz3 {
 	
 	public static void main(String[] args) {
@@ -12,5 +13,4 @@ public class Matriz3 {
 			System.out.print(elemento + " ");
 		}
 	}
-
 }

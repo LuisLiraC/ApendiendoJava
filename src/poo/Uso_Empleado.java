@@ -17,18 +17,27 @@ public class Uso_Empleado {
 		Empleados[2]=new Empleado("Arturo", 8000, 2010, 1, 1);
 		Empleados[3]=new Empleado("Juan");
 
-		// Polimorfismo - Principio de sustituciÃ³n
+		// Polimorfismo - Principio de sustitución
 		Empleados[4]=jefeRRHH;
 		Empleados[5]= new Jefatura("Tristana", 20000, 1999, 5, 19); 
+		
+		Jefatura jefaFinanzas=(Jefatura) Empleados[5];
+		jefaFinanzas.establece_incentivo(5000);
+		
+		System.out.println(jefaFinanzas.tomar_decisiones("Dar más días de vacaciones" + "\n"));
 		
 		for (Empleado e: Empleados) {
 			e.aumentoSueldo(5);
 		}
+
+		
+		Arrays.sort(Empleados);
+		
 		
 		for (Empleado e: Empleados) {
 			System.out.println("ID " + e.dameId() + " - " + 
 					" Nombre " + e.dameNombre() + 
-					/* Polimorfismo - Java sabe cuÃ¡ndo ir a dameSueldo() de Empleado
+					/* Polimorfismo - Java sabe cuándo ir a dameSueldo() de Empleado
 					 * y cuando ir a dameSueldo() de Jefatura 
 					 */
 					" | Sueldo $ " + e.dameSueldo() +
@@ -38,9 +47,11 @@ public class Uso_Empleado {
 
 }
 
+//------------------------ Clase Empleado ------------------------//
 
+						// Incluyendo interfaz
 
-class Empleado {
+class Empleado implements Comparable {
 	
 	public Empleado (String nom, double sue, int year, int month, int day) {
 		
@@ -59,7 +70,7 @@ class Empleado {
 	
 	
 	
-	// Getter
+	// Métodos
 	public String dameNombre() {
 		return nombre;
 	}
@@ -72,54 +83,62 @@ class Empleado {
 		return altaContrato;
 	}
 	
-	// Setter
 	public void aumentoSueldo(double porcentaje) {
-		
 		double aumento = sueldo*porcentaje/100;
-		
 		sueldo += aumento;
 	}
 	
+	public int dameId() {
+		return id;
+	}
 	
-	// DeclaraciÃ³n de variable de clase
+	// Construir CompareTo
+	
+	public int compareTo(Object miObjeto) {
+		Empleado otroEmpleado = (Empleado) miObjeto;
+		if (this.id < otroEmpleado.id) {
+			return -1;
+		}
+		if (this.id > otroEmpleado.id ) {
+			return 1;
+		}
+		
+		return 0;
+	}
+	
+	// Declaración de variable de clase
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
 	private int id;
 	private static int idSiguiente = 1;
-	
-	// Getter
-	public int dameId() {
-		return id;
-	}
+
 }
 
 
+//------------------------ Clase Jefatura ------------------------//
 
-
-
-
-
-class Jefatura extends Empleado {
+class Jefatura extends Empleado implements Jefes {
 	
 	public Jefatura (String nom, double sue, int year, int month, int day) {
-		
-		super(nom, sue, year, month, day);
-				
+		super(nom, sue, year, month, day);	
 	}
 	
-	// Setter
+	// Métodos
 	public void establece_incentivo(double b) {
 		incentivo=b;
 	}
 	
-	// Getter
-	
 	public double dameSueldo () {
 		double sueldoJefe = super.dameSueldo();
-		return sueldoJefe + incentivo; 
+		return sueldoJefe + incentivo	; 
 	}
 	
+	public String tomar_decisiones(String decision) {
+		return "Un miembro de la dirección ha tomado la decisión de: " + decision;
+	}
+	
+	// Declaración de variable de clase
 	private double incentivo;
 	
 }

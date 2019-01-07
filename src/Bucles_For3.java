@@ -1,5 +1,3 @@
-// Por el momento sólo sirve hasta el 25 ;-;
-
 import javax.swing.*;
 public class Bucles_For3 {
 
@@ -7,7 +5,7 @@ public class Bucles_For3 {
 		
 		long resultado = 1L;
 		
-		int numero = Integer.parseInt(JOptionPane.showInputDialog("Ingresa número"));
+		int numero = Integer.parseInt(JOptionPane.showInputDialog("Ingresa n�mero"));
 		
 		for (int i=numero; i>0; i--) {
 			

@@ -7,14 +7,14 @@ public class EntradaDeDatos2 {
 		String edad= JOptionPane.showInputDialog("Introduce tu edad");
 		
 		/* showInputDialog siempre devuelve un dato de tipo String
-		 * por lo que necesitamos convertirlo a un valor num√©rico 
+		 * por lo que necesitamos convertirlo a un valor numÈrico 
 		 */
 		
 		int edad_numero = Integer.parseInt(edad);
 		edad_numero++;
 				
 		System.out.println("Hola " + nombre + "!");
-		System.out.println("Cumplir√°s " + edad_numero + " a√±os");
+		System.out.println("Cumplir·s " + edad_numero + " aÒos");
 
 	}
 
